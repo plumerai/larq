@@ -37,8 +37,8 @@ def _compute_padding(stride, dilation_rate, input_size, filter_size):
 class BaseLayer(tf.keras.layers.Layer):
     """Base class for defining quantized layers.
 
-    `input_quantizer` is the element-wise quantization functions to use.
-    If `input_quantizer=None` this layer is equivalent to `tf.keras.layers.Layer`.
+    `input_quantizer` is the element-wise quantization functions to use. If
+    `input_quantizer=None` this layer is equivalent to `tf.keras.layers.Layer`.
     """
 
     def __init__(self, *args, input_quantizer=None, **kwargs):
@@ -58,7 +58,7 @@ class BaseLayer(tf.keras.layers.Layer):
         }
 
     def _get_quantizer(self, name) -> Optional[Quantizer]:
-        """Get quantizer for given kernel name"""
+        """Get quantizer for given kernel name."""
         return None
 
     def _add_variable_with_custom_getter(self, name: str, **kwargs):
@@ -79,8 +79,8 @@ class BaseLayer(tf.keras.layers.Layer):
 class QuantizerBase(BaseLayer):
     """Base class for defining quantized layers with a single kernel.
 
-    `kernel_quantizer` is the element-wise quantization functions to use.
-    If `kernel_quantizer=None` this layer is equivalent to `BaseLayer`.
+    `kernel_quantizer` is the element-wise quantization functions to use. If
+    `kernel_quantizer=None` this layer is equivalent to `BaseLayer`.
     """
 
     def __init__(self, *args, kernel_quantizer=None, **kwargs):
@@ -104,7 +104,7 @@ class QuantizerBase(BaseLayer):
 
 
 class QuantizerBaseConv(tf.keras.layers.Layer):
-    """Base class for defining quantized conv layers"""
+    """Base class for defining quantized conv layers."""
 
     def __init__(self, *args, pad_values=0.0, **kwargs):
         self.pad_values = pad_values
@@ -180,10 +180,10 @@ class QuantizerBaseConv(tf.keras.layers.Layer):
 
 
 class QuantizerDepthwiseBase(BaseLayer):
-    """Base class for defining depthwise quantized layers
+    """Base class for defining depthwise quantized layers.
 
-    `depthwise_quantizer` is the element-wise quantization functions to use.
-    If `depthwise_quantizer=None` this layer is equivalent to `BaseLayer`.
+    `depthwise_quantizer` is the element-wise quantization functions to use. If
+    `depthwise_quantizer=None` this layer is equivalent to `BaseLayer`.
     """
 
     def __init__(

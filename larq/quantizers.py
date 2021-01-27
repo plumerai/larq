@@ -1,5 +1,5 @@
-"""A Quantizer defines the way of transforming a full precision input to a
-quantized output and the pseudo-gradient method used for the backwards pass.
+"""A Quantizer defines the way of transforming a full precision input to a quantized
+output and the pseudo-gradient method used for the backwards pass.
 
 Quantizers can either be used through quantizer arguments that are supported
 for Larq layers, such as `input_quantizer` and `kernel_quantizer`; or they

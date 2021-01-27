@@ -25,13 +25,15 @@ def memory_as_readable_str(num_bits: int) -> str:
 
 
 def register_keras_custom_object(cls):
-    """See https://github.com/tensorflow/addons/blob/master/tensorflow_addons/utils/keras_utils.py#L25"""
+    """See https://github.com/tensorflow/addons/blob/master/tensorflow_addons/utils/kera
+    s_utils.py#L25."""
     get_custom_objects()[cls.__name__] = cls
     return cls
 
 
 def register_alias(name: str):
     """A decorator to register a custom keras object under a given alias.
+
     !!! example
         ```python
         @utils.register_alias("degeneration")
@@ -48,7 +50,7 @@ def register_alias(name: str):
 
 
 def set_precision(precision: int = 32):
-    """A decorator to set the precision of a quantizer function
+    """A decorator to set the precision of a quantizer function.
 
     # Arguments
         precision: An integer defining the precision of the output.
@@ -63,7 +65,7 @@ def set_precision(precision: int = 32):
 
 @contextmanager
 def patch_object(object, name, value):
-    """Temporarily overwrite attribute on object"""
+    """Temporarily overwrite attribute on object."""
     old_value = getattr(object, name)
     setattr(object, name, value)
     yield

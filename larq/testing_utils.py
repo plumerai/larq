@@ -80,6 +80,7 @@ def layer_test(
     should_run_eagerly=False,
 ):
     """Test routine for a layer with a single input and single output.
+
     Arguments:
       layer_cls: Layer class object.
       kwargs: Optional dictionary of keyword arguments for instantiating the

@@ -15,14 +15,14 @@ else:
 
 @pytest.fixture
 def eager_mode():
-    """pytest fixture for running test in eager mode"""
+    """pytest fixture for running test in eager mode."""
     with context.eager_mode():
         yield
 
 
 @pytest.fixture
 def graph_mode():
-    """pytest fixture for running test in graph mode"""
+    """pytest fixture for running test in graph mode."""
     with context.graph_mode():
         with tf.compat.v1.Session().as_default():
             yield
@@ -31,7 +31,7 @@ def graph_mode():
 
 @pytest.fixture(params=["eager", "graph"])
 def eager_and_graph_mode(request):
-    """pytest fixture for running test in eager and graph mode"""
+    """pytest fixture for running test in eager and graph mode."""
     if request.param == "graph":
         with context.graph_mode():
             with tf.compat.v1.Session().as_default():
@@ -77,7 +77,7 @@ def distribute_scope(request):
 
 @pytest.fixture(params=[True, False])
 def quantized(request):
-    """pytest fixture for running test quantized and non-quantized"""
+    """pytest fixture for running test quantized and non-quantized."""
     with lq_context.quantized_scope(request.param):
         yield request.param
 

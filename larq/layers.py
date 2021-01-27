@@ -2,8 +2,8 @@
 describes the way of quantizing the activation of the previous layer and the weights
 respectively.
 
-If both `input_quantizer` and `kernel_quantizer` are `None` the layer
-is equivalent to a full precision layer.
+If both `input_quantizer` and `kernel_quantizer` are `None` the layer is equivalent to a
+full precision layer.
 """
 
 import tensorflow as tf

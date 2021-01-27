@@ -1,5 +1,5 @@
-"""Functions from the `constraints` module allow setting constraints
-(eg. weight clipping) on network parameters during optimization.
+"""Functions from the `constraints` module allow setting constraints (eg. weight
+clipping) on network parameters during optimization.
 
 The penalties are applied on a per-layer basis. The exact API will depend on the layer,
 but the layers `QuantDense`, `QuantConv1D`, `QuantConv2D` and `QuantConv3D` have a
@@ -27,7 +27,7 @@ from larq import utils
 
 @utils.register_keras_custom_object
 class WeightClip(tf.keras.constraints.Constraint):
-    """Weight Clip constraint
+    """Weight Clip constraint.
 
     Constrains the weights incident to each hidden unit
     to be between `[-clip_value, clip_value]`.

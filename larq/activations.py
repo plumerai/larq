@@ -29,10 +29,7 @@ from larq import utils
 
 @utils.register_keras_custom_object
 def hard_tanh(x: tf.Tensor) -> tf.Tensor:
-    """Hard tanh activation function.
-    ```plot-activation
-    activations.hard_tanh
-    ```
+    """Hard tanh activation function. ```plot-activation activations.hard_tanh ```
 
     # Arguments
         x: Input tensor.
